@@ -1,5 +1,6 @@
 import java.util.*;
 
+// Doubly LinkedList is created. Implements List and Deque
 class Linkedlist
 {
     public static void main(String[] args)
@@ -7,7 +8,10 @@ class Linkedlist
         // constructor
         LinkedList l = new LinkedList();    // LinkedList<String> l = new LinkedList<String>();
 
-        // add(element) - returns boolean
+        // constructor
+        LinkedList ll = new LinkedList(Collection l);    // creates a list containing elements of collection in the order they are returned by Collection's iterator
+
+        // boolean add(element)
         l.add("a");
         l.add("b");
         l.add("c");
@@ -16,6 +20,7 @@ class Linkedlist
         System.out.println(l);
 
         // add(index, element) - returns void
+        // if index is out of bounds throws IndexOutOfBoundsException
         l.add(0,"0");    // add at specified position
         l.add(1,"1");
         System.out.println(l);
@@ -27,14 +32,15 @@ class Linkedlist
         l.addLast("l");    // add at last position
         System.out.println(l);
 
-        // addAll(collection) - returns boolean
+        // addAll(Collection c) - returns boolean
+        // throws NullPointerException is collection is empty
         Collection col = new ArrayList();
         col.add("arr");
         col.add(1);
         l.addAll(col);    // add a list at back
         System.out.println(l);
 
-        // addAll(collection) - returns boolean
+        // addAll(Collection c) - returns boolean
         LinkedList col3 = new LinkedList();
         col3.add("A");
         col3.add("B");
@@ -44,6 +50,7 @@ class Linkedlist
         System.out.println(l);
 
         // addAll(index, collection) - returns boolean
+        // throws IndexOutOfBoundsException and NUllPointerException
         ArrayList col2 = new ArrayList();
         col2.add("arr");
         col2.add(2);
@@ -85,6 +92,7 @@ class Linkedlist
         System.out.println(col3);
         col3.set(3, "D");
 
+        // If the list is altered(not using the iterator) after the iterator is created then it will throw an exception ConcurrenytModificationException
         // listIterator(index) - returns iterator starting from index
         Iterator itr = col3.listIterator(2);
         while(itr.hasNext())
