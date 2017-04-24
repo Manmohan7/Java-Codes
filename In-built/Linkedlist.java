@@ -8,8 +8,12 @@ class Linkedlist
         // constructor
         LinkedList l = new LinkedList();    // LinkedList<String> l = new LinkedList<String>();
 
-        // constructor
-        LinkedList ll = new LinkedList(Collection l);    // creates a list containing elements of collection in the order they are returned by Collection's iterator
+        // copy constructor
+        LinkedList ll = new LinkedList(l);    // creates a list containing elements of collection in the order they are returned by Collection's iterator
+
+        // Copy Constructor
+        Collection col5 = new LinkedList(ll);
+        System.out.println(col5);
 
         // boolean add(element)
         l.add("a");
@@ -56,10 +60,6 @@ class Linkedlist
         col2.add(2);
         l.addAll(0,col2);    // add a list at a particular index
         System.out.println(l);
-
-        // Copy Constructor
-        Collection col5 = new LinkedList(col3);
-        System.out.println(col5);
 
         // clone() - returns Object
         Collection col4 = new LinkedList();
