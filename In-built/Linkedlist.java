@@ -132,7 +132,7 @@ class Linkedlist
 
         // peekFirst() - returns object of element
         // same as peek()
-        System.out.println("Peek First " + col2.peekFirst());    // returns null if list is empty
+        System.out.println("Peek First " + col3.peekFirst());    // returns null if list is empty
 
         // peekLast() - returns object of element
         // returns the tail of the list
@@ -140,29 +140,29 @@ class Linkedlist
 
         // poll() - returns object of element
         // retrieves and removes the head of list
-        System.out.println("Poll " + col4.poll());    // returns null if list is empty
+        System.out.println("Poll " + l.poll());    // returns null if list is empty
 
         // pollFirst() - returns object of element
-        // retriwvws and removes the head of list
-        System.out.println("Poll First" + col4.poll());    // returns null is list is empty
+        // retrieves and removes the head of list
+        System.out.println("Poll First" + l.pollFirst());    // returns null is list is empty
 
         // pollLast() - returns object of element
         // retrieves and removes the last element of the list
-        System.out.println("Poll Last " + col4.pollLast());    // returns null if list is empty
+        System.out.println("Poll Last " + l.pollLast());    // returns null if list is empty
 
         // pop() - returns object of element
         // removes the first element of the list
         // throws NoSuchElementException is list is empty
-        System.out.println("Pop " + col4.pop());
+        System.out.println("Pop " + l.pop());
 
         // push(element) - returns void
         // adds the element at the head of the list
-        col4.push("A");
+        l.push("A");
 
         // remove() - returns object of element
         // retrieves and removes the first element of the list
         // throws NoSuchElementException if list is empty
-        System.out.println("Remove " + col4.remove());
+        System.out.println("Remove " + l.remove());
 
         // remove(index) - returns object of element
         // throws IndexOutOfBoundsException
@@ -185,14 +185,14 @@ class Linkedlist
         System.out.println("Remove Last " + col3);
         col3.add(3,"D");
 
-        // removeFirstOccurence(Object o) - returns boolean
-        // removes the first occurence of object o
-        col3.removeFirstOccurence("D");
-        System.out.println("Remove First occurenece " + col3);
+        // removeFirstOccurrence(Object o) - returns boolean
+        // removes the first occurrence of object o
+        col3.removeFirstOccurrence("D");
+        System.out.println("Remove First occurrenece " + col3);
 
-        // removeLastOccurence(Object o) - returns boolean
-        // removes last occurence of object o
-        System.out.println("Remove Last Occurence " + col3.removeLastOccurence("F"));
+        // removeLastOccurrence(Object o) - returns boolean
+        // removes last occurrence of object o
+        System.out.println("Remove Last Occurrence " + col3.removeLastOccurrence('F'));
 
         // set(index, element) - returns old element
         // throws IndexOutOfBoundsException
@@ -215,6 +215,7 @@ class Linkedlist
         // toArray(variable) - returns array of datatype specified by the variable
         Object[] s2 = new Object[col3.size()];
         s2 = col3.toArray(s2);
+        System.out.print("To array ");
         //Object[] s = col3.toArray(s2);
         for(int i = 0; i < col3.size(); i++)
             System.out.print(s2[i] + " ");
