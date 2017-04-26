@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.String;
 
 // Doubly LinkedList is created. Implements List and Deque
 class Linkedlist
@@ -73,9 +74,10 @@ class Linkedlist
         System.out.println("Clone " + col5);
 
         // contains(element) - returns boolean
-        System.out.println("Contains " + col3.contains("A"));
+        System.out.println("Contains element " + col3.contains("A"));
 
         // descendingIterator() - returns Iterator<E>
+        // returns the iterator from tail to head
         Iterator x = col3.descendingIterator();
         System.out.print("Descending Iterator ");
         while(x.hasNext())
@@ -100,35 +102,35 @@ class Linkedlist
         System.out.println("Get Last " + col3.getLast());    // returns the element at last position
 
         // indexOf(element) - returns int
-        System.out.println("Index Of " + l.indexOf("arr"));    // returns the index of first occurence of element if found else -1
+        System.out.println("Index Of element " + l.indexOf("arr"));    // returns the index of first occurence of element if found else -1
 
         // lastIndexOf(element) - returns int
-        System.out.println("Last Index Of " + l.lastIndexOf("arr"));    // returns the last index of element if found else -1
+        System.out.println("Last Index Of element" + l.lastIndexOf("arr"));    // returns the last index of element if found else -1
 
         // listIterator(index) - returns iterator starting from index Iterator<E>
         // If the list is altered(not using the iterator) after the iterator is created 
         // then it will throw an exception ConcurrenytModificationException
         // throws IndexOutOfBoundsException 
         Iterator itr = col3.listIterator(2);
-        System.out.print("List Iterator ");
+        System.out.print("List Iterator from given index ");
         while(itr.hasNext())
             System.out.print(itr.next() + " ");
         System.out.println();
         
         // offer(element) - returns boolean
-        System.out.println("Offer added " + col3.offer("F"));    // adds the element at the end of list
+        System.out.println("Offer added " + col3.offer("E"));    // adds the element at the end of list
         System.out.println("Offer " + col3);
 
         // offerFirst(element) - returns boolean
         col3.offerFirst("0");    // adds the element at the first position
 
         // offerLast(element) - returns boolean
-        col3.offerLast("G");
+        col3.offerLast("F");
         System.out.println("Offer First and Last " + col3);
 
         // peek() - returns Object of element
         // retrieves but not removes the head of list
-        System.out.println("Peek " + col3);    // returns null if list is empty
+        System.out.println("Peek " + col3.peek());    // returns null if list is empty
 
         // peekFirst() - returns object of element
         // same as peek()
@@ -144,7 +146,7 @@ class Linkedlist
 
         // pollFirst() - returns object of element
         // retrieves and removes the head of list
-        System.out.println("Poll First" + l.pollFirst());    // returns null is list is empty
+        System.out.println("Poll First " + l.pollFirst());    // returns null is list is empty
 
         // pollLast() - returns object of element
         // retrieves and removes the last element of the list
@@ -166,24 +168,20 @@ class Linkedlist
 
         // remove(index) - returns object of element
         // throws IndexOutOfBoundsException
-        col3.remove(2);    // removes the element at index
+        col3.remove(0);    // removes the element at index
         System.out.println("Remove index " + col3);
-        col3.add(2,"C");
 
         // remove(element) - returns boolean
         col3.remove("B");
         System.out.println("Remove element " + col3);
-        col3.add(1,"B");
 
         // removeFirst() - returns object of element
         col3.removeFirst();    // remove and returns the first element
         System.out.println("Remove First " + col3);
-        col3.add(0,"A");
 
         // removeLast() - returns object of element
         col3.removeLast();    // remove and return the last element
         System.out.println("Remove Last " + col3);
-        col3.add(3,"D");
 
         // removeFirstOccurrence(Object o) - returns boolean
         // removes the first occurrence of object o
@@ -196,9 +194,8 @@ class Linkedlist
 
         // set(index, element) - returns old element
         // throws IndexOutOfBoundsException
-        col3.set(3, "E");
+        col3.set(1, "D");
         System.out.println("Set " + col3);
-        col3.set(3, "D");
 
         // size() - returns int
         System.out.println("Size " + col3.size());    // returns the number of elements
