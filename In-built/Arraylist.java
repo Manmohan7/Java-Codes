@@ -18,6 +18,7 @@ class Arraylist extends ArrayList    // extends is used because removeRange func
         ArrayList arr3 = new ArrayList(3);    // it can store 3 elements but capacity increases as we add elements
 
         // add(element) - returns boolean
+        // adds element at the end of list
         arr.add("a");
         arr.add("b");
         arr.add("c");
@@ -25,45 +26,75 @@ class Arraylist extends ArrayList    // extends is used because removeRange func
         System.out.println(arr);
 
         // add(index, element) - returns void
+        // adds the element at the specified index and shifts the rest of the list to right
+        // throws IndexOutOfBoundsException
         arr.add(4,"e");    // index is 0 based
         arr.add(5,"f");
         System.out.println(arr);
 
-        //addAll(collection) - returns boolean
+        // addAll(collection) - returns boolean
+        // adds the Collection at the end of the list
+        // throws NullPointerException if Collection is null
         Collection col = new ArrayList();
         col.add(1);
         col.add(2);
         arr.addAll(col);
         System.out.println(arr);
 
-        //addAll(index, collection) - returns boolean
+        // addAll(index, collection) - returns boolean
+        // adds the Collection starting from the index specified
+        // throws NullPointerException if Collection is null
+        // throws IndexOutOfBounds
         Collection col2 = new ArrayList();
         col2.add(3);
         col2.add(4);
         arr.addAll(8, col2);
         System.out.println(arr);
 
-        // size() - returns number of elements
-        System.out.println(arr.size());
+        // clear() - returns void
+        // removes all the elements
+        arr.clear();
+        System.out.println(arr);
+
+        // clone() - returns Object
+        // creates a shallow copy any change in arr will be reflected in arr4
+        ArrayList arr4 = (ArrayList) arr.clone();
+        System.out.println(arr4);    // any change in arr4 will not be reflected in arr
 
         // contains(element) - return boolean
+        // checks if element is present in list
         System.out.println(arr.contains(1));
+        
+        // ensureCapacity(minCapacity) - returns void
+        // increases the capacity of arraylist to minimum of minCapacity given
+        arr.ensureCapacity(12);    
+        System.out.println(arr.size());
 
         // get(index) - returns element
-        System.out.println(arr.get(1));  // fetch data from given index
+        // fetch data from given index
+        // throws IndexOutOfBoundsException
+        System.out.println(arr.get(1));  
 
-        // set(index, element) - returns old element
-        System.out.println(arr.set(5,"x"));  // change the value at given index
-
-        // indexOf(element) - returns index of element else -1
+        // indexOf(element) - returns index of first occurence of element else -1
         System.out.println(arr.indexOf("e"));
+
+        // isEmpty() - returns boolean
+        // checks if list is empty
+        arr.isEmpty();
+
+        // iterator() - returns Iterator<E>
+        // throws ConcurrentModificationException if list is modified
+        Iterator<>
 
         // lastIndexOf(element) - returns last index of element
         System.out.println(arr.lastIndexOf("c"));
 
-        // clone() - returns Object
-        ArrayList arr4 = (ArrayList) arr.clone();    // creates a shallow copy any change in arr will be reflected in arr4
-        System.out.println(arr4);    // any change in arr4 will not be reflected in arr
+        // size() - returns number of elements
+        System.out.println(arr.size());
+
+        // set(index, element) - returns old element
+        System.out.println(arr.set(5,"x"));  // change the value at given index
+
 
         // toArray() - returns Object[]
         Object[] arr5 = arr.toArray();
@@ -78,10 +109,6 @@ class Arraylist extends ArrayList    // extends is used because removeRange func
             System.out.print(arr6[i] + " ");
         System.out.println();
 
-        //ensureCapacity(num) - returns void
-        arr.ensureCapacity(12);    // increases the capacity of arraylist
-        System.out.println(arr.size());
-
         // trimToSize() - returns void
         arr.trimToSize();    // reduces the size of the arraylist to accomodate the current elements
 
@@ -92,8 +119,5 @@ class Arraylist extends ArrayList    // extends is used because removeRange func
         // arr.removeRange(5,8);    // this will not work if ArrayList is not extended as it is protected
         System.out.println(arr);    // removes the elements including from-index and excluding to-index
 
-        // clear() - returns void
-        arr.clear();    // removes all the elements
-        System.out.println(arr);
     }
 }

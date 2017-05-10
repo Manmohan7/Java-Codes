@@ -217,5 +217,24 @@ class Linkedlist
         for(int i = 0; i < col3.size(); i++)
             System.out.print(s2[i] + " ");
         System.out.println();
+
+        // this can be use to sort the LinkedList
+        LinkedList<Integer> linklist = new LinkedList<>();
+        linklist.add(new Integer(5));
+        linklist.add(new Integer(8));
+        linklist.add(new Integer(3));
+        System.out.println(linklist);
+        linklist.sort(new Comparator<Integer>(){
+            // define the comparator according to your own need
+            public int compare(Integer i1, Integer i2)
+            {
+                return i1.intValue() - i2.intValue();
+            }
+        });
+
+        // we can also use Collections.sort(linklistt);
+        // to sort the LinkedList
+        System.out.println(linklist);
+
     }
 }
